@@ -36,12 +36,11 @@ public class JpaWiringTest {
 		
 		Category retrievedCategory = categoryRepo.findById(testCategory.getId()).get();
 		Review retrievedReview = reviewRepo.findById(testReview1.getId()).get();
-		
-		
 		Review retrievedReview2 =reviewRepo.findById(testReview2.getId()).get();
-		assertThat(retrievedCategory.getReviews(), containsInAnyOrder(retrievedReview, retrievedReview2 ));
-		assertThat(retrievedReview.getCategory(), is(retrievedCategory));
-		assertThat(retrievedReview.getCategory().getName(), is("name"));
-		assertThat(retrievedCategory.getReviews().size(), is(2));
+		
+		assertThat(retrievedCategory.getReviews(), containsInAnyOrder(testReview1, testReview2));
+		assertThat(retrievedReview.getCategory(), is(testCategory));
+		
 	}
+
 }
