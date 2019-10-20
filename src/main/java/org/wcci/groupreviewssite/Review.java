@@ -25,6 +25,10 @@ public class Review {
 	private List<Tag> tags;
 	
 	protected Review() {}
+	@Override
+	public String toString() {
+		return "Review [name=" + name + "]";
+	}
 	public Review(String name, String description, String contactInfo, String imageUrl, Category category) {
 		this.name = name;
 		this.description = description;
