@@ -33,14 +33,7 @@ public class CategoryControllerTest {
 	@Mock
 	private Category anotherCategory;
 	
-	@Mock
-	private ReviewRepository reviewRepo;
 	
-	@Mock
-	private Review review;
-	
-	@Mock
-	private Review anotherReview;
 	
 	@Mock
 	private Model model;

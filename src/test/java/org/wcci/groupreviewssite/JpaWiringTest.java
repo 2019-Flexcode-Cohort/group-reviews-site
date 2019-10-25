@@ -70,9 +70,7 @@ public class JpaWiringTest {
 		review = result.get();
 		assertThat(review.getName(), is("review1"));
 	}
-	@Test
-	public void shouldBeOkForSingleReview() {
-	}
+	
 	
 	@Test
 	public void shouldSaveAndLoadTag() {
