@@ -1,24 +1,28 @@
-package org.wcci.groupreviewssite;
+package org.wcci.groupreviewssite.models;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Tag {
+public class Category {
+
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	
 	private String name;
-	@ManyToMany
+	
+	@OneToMany(mappedBy="category")
 	private List<Review> reviews;
-
-	protected Tag() {
+	
+	protected Category() {}
+	
+	public Category(String name) {
+		this.name = name;
 	}
 
 	public Long getId() {
@@ -29,12 +33,8 @@ public class Tag {
 		return name;
 	}
 
-	public Tag(String name, Review... reviews) {
-		this.name = name;
-		this.reviews = Arrays.asList(reviews);
-	}
-
 	public List<Review> getReviews() {
+		
 		return reviews;
 	}
 
@@ -55,7 +55,7 @@ public class Tag {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Tag other = (Tag) obj;
+		Category other = (Category) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -68,4 +68,6 @@ public class Tag {
 			return false;
 		return true;
 	}
+	
+
 }

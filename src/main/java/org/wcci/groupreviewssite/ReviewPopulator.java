@@ -4,6 +4,11 @@ import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wcci.groupreviewssite.models.Category;
+import org.wcci.groupreviewssite.models.Review;
+import org.wcci.groupreviewssite.repositories.CategoryRepository;
+import org.wcci.groupreviewssite.repositories.ReviewRepository;
+import org.wcci.groupreviewssite.repositories.TagRepository;
 
 @Component
 public class ReviewPopulator implements CommandLineRunner{

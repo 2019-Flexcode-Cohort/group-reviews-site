@@ -1,4 +1,4 @@
-package org.wcci.groupreviewssite;
+package org.wcci.groupreviewssite.models;
 
 import java.util.List;
 
