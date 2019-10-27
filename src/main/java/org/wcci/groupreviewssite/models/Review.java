@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Review {
 
-
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -19,16 +18,22 @@ public class Review {
 	private String description;
 	private String contactInfo;
 	private String imageUrl;
+	
 	@ManyToOne
 	private Category category;
-	@ManyToMany(mappedBy="reviews")
-	private List<Tag> tags;
 	
-	protected Review() {}
+	
+	@ManyToMany(mappedBy = "reviews")
+	private List<Tag> tags;
+
+	protected Review() {
+	}
+
 	@Override
 	public String toString() {
 		return "Review [name=" + name + "]";
 	}
+
 	public Review(String name, String description, String contactInfo, String imageUrl, Category category) {
 		this.name = name;
 		this.description = description;
@@ -60,6 +65,7 @@ public class Review {
 	public Long getId() {
 		return id;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -72,6 +78,7 @@ public class Review {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -113,5 +120,5 @@ public class Review {
 			return false;
 		return true;
 	}
-	
+
 }

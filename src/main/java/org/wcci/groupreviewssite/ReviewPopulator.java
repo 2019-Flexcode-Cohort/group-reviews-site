@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wcci.groupreviewssite.models.Category;
 import org.wcci.groupreviewssite.models.Review;
+import org.wcci.groupreviewssite.models.Tag;
 import org.wcci.groupreviewssite.repositories.CategoryRepository;
 import org.wcci.groupreviewssite.repositories.ReviewRepository;
 import org.wcci.groupreviewssite.repositories.TagRepository;
@@ -47,5 +48,10 @@ public class ReviewPopulator implements CommandLineRunner{
 		middleWestSpirits = reviewRepo.save(middleWestSpirits);
 		Review fourFiftyOneSpirits = new Review("451 Spirits", "Description", "Contact Info", "Image Url", spirits);
 		fourFiftyOneSpirits = reviewRepo.save(fourFiftyOneSpirits);
+		
+		tagRepo.save(new Tag("#WineWinning", powellVillageWinery, wineOnHigh));
+		tagRepo.save(new Tag("#BrewBoss", wolfsRidgeBrewing, northHighBrewing));
+		tagRepo.save(new Tag("DistillingDreams", middleWestSpirits, fourFiftyOneSpirits));
+		
 	}
 }
