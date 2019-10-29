@@ -20,7 +20,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.wcci.groupreviewssite.controllers.CategoryController;
 import org.wcci.groupreviewssite.controllers.ReviewController;
 import org.wcci.groupreviewssite.models.Review;
 import org.wcci.groupreviewssite.repositories.ReviewRepository;
@@ -29,6 +28,8 @@ import org.wcci.groupreviewssite.repositories.ReviewRepository;
 @WebMvcTest(ReviewController.class)
 public class ReviewControllerMockMvcTest {
 
+	
+	
 	@Resource
 	private MockMvc mvc;
 
@@ -40,6 +41,8 @@ public class ReviewControllerMockMvcTest {
 
 	@Mock
 	private Review anotherReview;
+	
+	
 
 	@Test
 	public void shouldRouteToSingleReviewView() throws Exception {
@@ -83,5 +86,7 @@ public class ReviewControllerMockMvcTest {
 		mvc.perform(get("/allReviews")).andExpect(model().attribute("reviews", is(allReviews)));
 
 	}
+
+	
 
 }
