@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Review {
 
@@ -22,7 +24,7 @@ public class Review {
 	@ManyToOne
 	private Category category;
 	
-	
+	@JsonIgnore
 	@ManyToMany(mappedBy = "reviews")
 	private List<Tag> tags;
 
