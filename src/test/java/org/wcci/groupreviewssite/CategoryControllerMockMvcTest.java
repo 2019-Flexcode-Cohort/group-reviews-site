@@ -1,6 +1,7 @@
 package org.wcci.groupreviewssite;
 
 import static org.hamcrest.Matchers.is;
+
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -22,9 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.wcci.groupreviewssite.controllers.CategoryController;
 import org.wcci.groupreviewssite.models.Category;
-import org.wcci.groupreviewssite.models.Review;
 import org.wcci.groupreviewssite.repositories.CategoryRepository;
-import org.wcci.groupreviewssite.repositories.ReviewRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(CategoryController.class)
