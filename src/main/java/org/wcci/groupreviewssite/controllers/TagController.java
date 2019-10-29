@@ -37,12 +37,10 @@ public class TagController {
 	public Tag addTagToReview(@PathVariable long reviewId, @PathVariable String tagName) {
 		Review review = reviewRepo.findById(reviewId).get();
 		Tag tag= new Tag("#"+tagName, review);
-		
-		
-		
-		
 		return tagRepo.save(tag);
 	}
+
+	
 	
 
 }

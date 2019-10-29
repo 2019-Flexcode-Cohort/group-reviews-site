@@ -19,23 +19,14 @@ public class Category {
 	private long id;
 
 	private String name;
-<<<<<<< HEAD
-	@JsonIgnore
-	@OneToMany(mappedBy="category")
-	private List<Review> reviews;
-	
-	protected Category() {}
-	
-	public Category(String name) {
-=======
 
+	@JsonIgnore
 	@ManyToMany
 	private Collection<Review> reviews;
 
 	public Category() {}
 
 	public Category(String name, Review...reviews) {
->>>>>>> master
 		this.name = name;
 		this.reviews = new HashSet<>(Arrays.asList(reviews));
 	}

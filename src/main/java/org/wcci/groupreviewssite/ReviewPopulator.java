@@ -54,12 +54,10 @@ public class ReviewPopulator implements CommandLineRunner{
 
 		tagRepo.save(new Tag("#WineWinning", powellVillageWinery, wineOnHigh));
 		tagRepo.save(new Tag("#BrewBoss", wolfsRidgeBrewing, northHighBrewing));
-<<<<<<< HEAD
 		tagRepo.save(new Tag("#DistillingDreams", middleWestSpirits, fourFiftyOneSpirits));
 		
-=======
-		tagRepo.save(new Tag("DistillingDreams", middleWestSpirits, fourFiftyOneSpirits));
 
->>>>>>> master
+
+
 	}
 }

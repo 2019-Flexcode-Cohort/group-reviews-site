@@ -20,19 +20,14 @@ public class Review {
 	private String description;
 	private String contactInfo;
 	private String imageUrl;
-<<<<<<< HEAD
-	
-	@ManyToOne
-	private Category category;
+
 	
 	@JsonIgnore
-=======
-
 	@ManyToMany(mappedBy = "reviews")
 	private Collection<Category> categories;
 
 
->>>>>>> master
+
 	@ManyToMany(mappedBy = "reviews")
 	private Collection<Tag> tags;
 
@@ -98,5 +93,8 @@ public class Review {
 	}
 
 
+	}
 
-}
+
+
+

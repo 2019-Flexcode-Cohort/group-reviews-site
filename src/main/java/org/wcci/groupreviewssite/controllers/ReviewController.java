@@ -15,22 +15,19 @@ import org.wcci.groupreviewssite.repositories.ReviewRepository;
 @Controller
 public class ReviewController {
 
+	@Resource
+	private ReviewRepository reviewRepo;
 
-@Resource
-private ReviewRepository reviewRepo;
+	@RequestMapping("/singleReview")
+	public String findOneReview(@RequestParam(value = "id") long id, Model model) throws ReviewNotFoundException {
+		Optional<Review> review = reviewRepo.findById(id);
 
-
-
-@RequestMapping("/singleReview")
-public String findOneReview(@RequestParam(value="id") long id, Model model) throws ReviewNotFoundException {
-	Optional<Review> review = reviewRepo.findById(id);
-
-	if(review.isPresent()) {
-		model.addAttribute("review", review.get());
-		return "singleReview";
+		if (review.isPresent()) {
+			model.addAttribute("review", review.get());
+			return "singleReview";
+		}
+		throw new ReviewNotFoundException();
 	}
-	throw new ReviewNotFoundException();
-}
 
 @RequestMapping("/allReviews")
 public String findAllReviews(Model model) {
@@ -38,42 +35,6 @@ public String findAllReviews(Model model) {
 	return "allReviews";
 }
 
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-}
->>>>>>> master
