@@ -13,7 +13,6 @@ import org.wcci.groupreviewssite.models.Review;
 import org.wcci.groupreviewssite.repositories.ReviewRepository;
 
 @Controller
-
 public class ReviewController {
 
 
@@ -25,7 +24,7 @@ private ReviewRepository reviewRepo;
 @RequestMapping("/singleReview")
 public String findOneReview(@RequestParam(value="id") long id, Model model) throws ReviewNotFoundException {
 	Optional<Review> review = reviewRepo.findById(id);
-	
+
 	if(review.isPresent()) {
 		model.addAttribute("review", review.get());
 		return "singleReview";
@@ -74,3 +73,7 @@ public String findAllReviews(Model model) {
 
 
 
+<<<<<<< HEAD
+=======
+}
+>>>>>>> master

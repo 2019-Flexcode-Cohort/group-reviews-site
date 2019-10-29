@@ -1,11 +1,13 @@
 package org.wcci.groupreviewssite.models;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -14,9 +16,10 @@ public class Category {
 
 	@Id
 	@GeneratedValue
-	private Long id;
-	
+	private long id;
+
 	private String name;
+<<<<<<< HEAD
 	@JsonIgnore
 	@OneToMany(mappedBy="category")
 	private List<Review> reviews;
@@ -24,10 +27,20 @@ public class Category {
 	protected Category() {}
 	
 	public Category(String name) {
+=======
+
+	@ManyToMany
+	private Collection<Review> reviews;
+
+	public Category() {}
+
+	public Category(String name, Review...reviews) {
+>>>>>>> master
 		this.name = name;
+		this.reviews = new HashSet<>(Arrays.asList(reviews));
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -35,8 +48,7 @@ public class Category {
 		return name;
 	}
 
-	public List<Review> getReviews() {
-		
+	public Collection<Review> getReviews() {
 		return reviews;
 	}
 
@@ -44,8 +56,7 @@ public class Category {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 
@@ -58,18 +69,11 @@ public class Category {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
+		if (id != other.id)
 			return false;
 		return true;
 	}
-	
+
+
 
 }
