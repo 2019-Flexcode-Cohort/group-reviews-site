@@ -15,9 +15,9 @@ public class TagController {
 	
 	@Resource
 	private TagRepository tagRepo;
-	 
+	
 	@GetMapping("")
-	public Iterable<Tag> fetchTags() { 
+	public Iterable<Tag> fetchTags() {
 		return tagRepo.findAll();
 	}
 	

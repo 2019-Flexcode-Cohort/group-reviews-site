@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
 
 @Entity
 public class Review {
@@ -29,14 +26,6 @@ public class Review {
 	@ManyToMany(mappedBy = "reviews")
 	private Collection<Tag> tags;
 
-	@OneToMany(mappedBy = "reviews")
-	private List<Comment> comments;
-	
-	
-	public List<Comment> getComments(){
-		return comments;
-	}
-	
 	protected Review() {
 	}
 
