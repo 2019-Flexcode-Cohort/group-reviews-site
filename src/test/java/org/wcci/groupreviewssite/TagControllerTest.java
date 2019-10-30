@@ -43,18 +43,17 @@ public class TagControllerTest {
 	public void shouldAddNewTagToReview() {
 		when(reviewRepo.findById(1L)).thenReturn(Optional.of(review));
 		Tag tagToAdd = new Tag("#test", review);
-		underTest.addTagToReview(1L, "#test");
+		underTest.addTagToReview(1L, "test");
 		verify(tagRepo).save(tagToAdd);
 		
 	}
 	
-//	@Test
-//	public void shouldAddSingleTagToReview (){
-//		long newTagId = 1;
-//		when(tagRepo.findById(newTagId)).thenReturn(Optional.of(tag));
-//		underTest.findOneTag(newTagId, review);
-//		verify(review).addAttribute("tag", tag);
-//	}
-//	
+@Test
+public void shouldRemoveTagFromReview() {
+	when(reviewRepo.findById(1L)).thenReturn(Optional.of(review));
+	Tag tagToRemove =new Tag("removedTag", review);
+	underTest.removeTagFromReview(1L, "removeTag");
+	verify(tagRepo).delete(tagToRemove);
+}
 
 }
