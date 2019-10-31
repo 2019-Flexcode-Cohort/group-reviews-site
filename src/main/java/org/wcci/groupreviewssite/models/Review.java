@@ -27,11 +27,11 @@ public class Review {
 	@ManyToMany(mappedBy = "reviews")
 	private List<Tag> tags;
 
-	@OneToMany(mappedBy = "reviews")
+	@OneToMany(mappedBy = "review")
 	private List<Comment> comments;
 	
 	
-	public List<Comment> getComments(){
+	public List<Comment> getComment(){
 		return comments;
 	}
 	
