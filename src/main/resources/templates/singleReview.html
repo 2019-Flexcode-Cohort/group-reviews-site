@@ -1,27 +1,30 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${review.name}"></title>
     <link rel="stylesheet" type="text/css" th:href="@{/static/style.css}">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Powell Village Winery</h1>
-    <h2>One sentence that states their type ex: "A beautiful winery in the heart of Columbus"</h2>
+    <h1 th:text="${review.name}"></h1>
+    <img th:src="${review.ImageUrl}">
     //picture
-
-    //about for business
+    <h2>One sentence that states their type ex: "A beautiful winery in the heart of Columbus"</h2>
+    <h2 th:text="${review.description}"></h2>
     //What they're known for (any special drinks ect)
     //Menu Sample
-    //link to business website
-    //contact info
     //testimonials (2 or 3)
+    <h2 th:text="${review.contactInfo}"></h2>
+    //link to business' website
     <footer>
-
+        <p><a href="/categories">Back to Main Menu</a></p>
+        <small>&copy FlexCode Drinks 2019</small>
     </footer>
 </body>
 
