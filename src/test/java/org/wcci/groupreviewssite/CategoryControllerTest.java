@@ -16,9 +16,7 @@ import org.springframework.ui.Model;
 import org.wcci.groupreviewssite.controllers.CategoryController;
 import org.wcci.groupreviewssite.exceptions.CategoryNotFoundException;
 import org.wcci.groupreviewssite.models.Category;
-import org.wcci.groupreviewssite.models.Review;
 import org.wcci.groupreviewssite.repositories.CategoryRepository;
-import org.wcci.groupreviewssite.repositories.ReviewRepository;
 
 public class CategoryControllerTest {
 

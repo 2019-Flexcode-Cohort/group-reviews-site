@@ -5,4 +5,5 @@ import org.wcci.groupreviewssite.models.Review;
 
 public interface ReviewRepository extends CrudRepository<Review, Long> {
 
+	Review findByName(String reviewName);
 }
