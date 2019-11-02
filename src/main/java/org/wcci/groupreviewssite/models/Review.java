@@ -1,11 +1,13 @@
 package org.wcci.groupreviewssite.models;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -20,11 +22,19 @@ public class Review {
 	private String imageUrl;
 
 	@ManyToMany(mappedBy = "reviews")
+
+	private List<Tag> tags;
+
+	@OneToMany(mappedBy = "review")
+	private List<Comment> comments;
+	
+	
+	public List<Comment> getComment(){
+		return comments;
+	}
+	@ManyToMany(mappedBy = "reviews")
 	private Collection<Category> categories;
 
-
-	@ManyToMany(mappedBy = "reviews")
-	private Collection<Tag> tags;
 
 	protected Review() {
 	}
