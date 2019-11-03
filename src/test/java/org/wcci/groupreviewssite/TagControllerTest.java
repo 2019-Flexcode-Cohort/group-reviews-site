@@ -48,12 +48,6 @@ public class TagControllerTest {
 		
 	}
 	
-@Test
-public void shouldRemoveTagFromReview() {
-	when(reviewRepo.findById(1L)).thenReturn(Optional.of(review));
-	Tag tagToRemove =new Tag("removedTag", review);
-	underTest.removeTagFromReview(1L, "removeTag");
-	verify(tagRepo).delete(tagToRemove);
-}
+
 
 }

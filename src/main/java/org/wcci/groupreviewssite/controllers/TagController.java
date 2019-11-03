@@ -40,11 +40,7 @@ public class TagController {
 		return tagRepo.save(tag);
 	}
 
-@PostMapping("/remove-tag-from-review/{reviewId}/{tagId}")
-	public Tag removeTagFromReview(@PathVariable long reviewId, @PathVariable String tagName) {
-	Review review = reviewRepo.findById(reviewId).get();
-		Tag tag= tagRepo.delete(tagName, review);
-	
+
 	
 		
 	}
@@ -52,4 +48,4 @@ public class TagController {
 	
 
 
-}
+
