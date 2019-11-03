@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Category {
 
@@ -18,6 +20,7 @@ public class Category {
 
 	private String name;
 
+	@JsonIgnore
 	@ManyToMany
 	private Collection<Review> reviews;
 
