@@ -1,11 +1,13 @@
 package org.wcci.groupreviewssite.models;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,15 +23,20 @@ public class Review {
 	private String contactInfo;
 	private String imageUrl;
 
-	
 	@JsonIgnore
 	@ManyToMany(mappedBy = "reviews")
-	private Collection<Category> categories;
 
+	private List<Tag> tags;
 
+	@OneToMany(mappedBy = "review")
+	private List<Comment> comments;
+
+	public List<Comment> getComment() {
+		return comments;
+	}
 
 	@ManyToMany(mappedBy = "reviews")
-	private Collection<Tag> tags;
+	private Collection<Category> categories;
 
 	protected Review() {
 	}
@@ -39,7 +46,7 @@ public class Review {
 		return "Review [name=" + name + "]";
 	}
 
-	public Review(String name, String description, String contactInfo, String imageUrl, Category...categories) {
+	public Review(String name, String description, String contactInfo, String imageUrl, Category... categories) {
 		this.name = name;
 		this.description = description;
 		this.contactInfo = contactInfo;
@@ -62,7 +69,7 @@ public class Review {
 		return imageUrl;
 	}
 
-	public Collection <Category> getCategories() {
+	public Collection<Category> getCategories() {
 		return categories;
 	}
 
@@ -92,9 +99,4 @@ public class Review {
 		return true;
 	}
 
-
-	}
-
-
-
-
+}
