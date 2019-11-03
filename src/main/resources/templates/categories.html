@@ -7,13 +7,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" th:href="@{/static/style.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
   <title>Categories</title>
 </head>
 
 <body>
   <header>
-    <h2>Click each link below to see reviews belonging to each review category</h2>
+    <h2>Click each link below to see reviews belonging to each review category! 🙂</h2>
   </header>
   <main>
     <div th:each="category: ${categories}">
@@ -30,8 +30,8 @@
 
 
 
-  <ul class="tagsList">Tags
-    <li>each tag</li>
+  <ul class="tagsList">List of Tags
+    <li>Each tag</li>
   </ul>
 
   <footer>Our footer </footer>
