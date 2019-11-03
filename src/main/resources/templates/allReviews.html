@@ -4,35 +4,25 @@
 
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" th:href="@{/static/style.css}">
-    <title>All Reviews</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+  <title>All Reviews</title>
 </head>
 
 <body>
-    <h1>All Businesses</h1>
-    <h2>Wineries</h2>
-    <ul>
-        <li>Powell Village Winery</li>
-        <li>Wine on High</li>
-    </ul>
-    <h2>Breweries</h2>
-    <ul>
-        <li>North High Brewing</li>
-        <li>Wolf's Ridge Brewing</li>
-    </ul>
-    <h2>Distilleries</h2>
-    <ul>
-        <li>Middle West Spirits</li>
-        <li>451 Spirits</li>
-    </ul>
 
-    <footer>
-        <p><a href="/categories">Back to Main Menu</a></p>
-        <small>&copy FlexCode Drinks 2019</small>
-    </footer>
+  <div class="" th:each="review: ${reviews}">
+    <h2>
+      <a th:href="@{/singleReview(id=${review.id})}" th:text="${review.name}"></a>
+    </h2>
+  </div>
+
+  <footer>
+    <p><a href="/categories">Back to Main Menu</a></p>
+    <small>&copy FlexCode Drinks 2019</small>
+  </footer>
 </body>
 
 </html>

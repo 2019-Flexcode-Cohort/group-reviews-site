@@ -27,11 +27,24 @@ h2{
     background: var(--berry);
 }
 
-#categories{
+.tagsList {
+  list-style-type: none;
+}
+
+.nav-items {
+  list-style-type: none;
+}
+
+a {
+  /* text-decoration: none; */
+  color: var(--wht);
+}
+
+/* #categories{
     .row {
         display: -webkit-flex;
         display: flex;
-    
+
     }
       .column {
         -webkit-flex: 1;
@@ -39,7 +52,9 @@ h2{
         flex: 1;
         padding: 10px;
         height: 300px;
-}
+} */
+
+
 /* #categories{
     display: grid;
     grid-template-columns: 350px 350px 350px;
