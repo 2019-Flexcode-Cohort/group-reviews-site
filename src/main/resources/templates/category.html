@@ -5,26 +5,27 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/static/style.css}">
   <title>Category</title>
 </head>
 
 <body>
-    <nav>
-      <h1 class="active" th:text="|${category.name} Reviews|"></h1>
-      <ul class="nav-right">
-        <li class="nav-items"><a href="/allReviews">All Reviews</a></li>
-      </ul>
-    </nav>
-    <header>
-      <h1>Reviews By Category</h1>
-    </header>
-    <div class="review" th:each="review: ${category.reviews}">
-      <h2>
-        <a  th:href="@{/singleReview(id=${review.id})}" th:text="${review.name}"></a>
-      </h2>
-    </div>
+  <nav>
+    <h1 class="active" th:text="|${category.name} Reviews|"></h1>
+    <ul class="nav-right">
+      <li class="nav-items"><a href="/allReviews">All Reviews</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Reviews By Category</h1>
+  </header>
+  <div class="review" th:each="review: ${category.reviews}">
+    <h2>
+      <a th:href="@{/singleReview(id=${review.id})}" th:text="${review.name}"></a>
+    </h2>
+  </div>
 
-    <!-- <ul class="reviewsList">
+  <!-- <ul class="reviewsList">
       <li>Each Review</li>
     </ul> -->
 
