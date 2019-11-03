@@ -32,7 +32,7 @@ public class Review {
 	private List<Comment> comments;
 
 	public List<Comment> getComment() {
-		return comments;
+		return getComments();
 	}
 
 	@ManyToMany(mappedBy = "reviews")
@@ -97,6 +97,14 @@ public class Review {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
 	}
 
 }

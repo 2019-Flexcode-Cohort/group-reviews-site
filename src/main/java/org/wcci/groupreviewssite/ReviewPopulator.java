@@ -4,8 +4,10 @@ import javax.annotation.Resource;
 
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.wcci.groupreviewssite.models.Category;
+import org.wcci.groupreviewssite.models.Comment;
 import org.wcci.groupreviewssite.models.Review;
 import org.wcci.groupreviewssite.models.Tag;
 import org.wcci.groupreviewssite.repositories.CategoryRepository;
@@ -23,6 +25,8 @@ public class ReviewPopulator implements CommandLineRunner{
 
 	@Resource
 	private TagRepository tagRepo;
+	@Resource
+	private CommentRepository commentRepo;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -55,9 +59,9 @@ public class ReviewPopulator implements CommandLineRunner{
 		tagRepo.save(new Tag("#WineWinning", powellVillageWinery, wineOnHigh));
 		tagRepo.save(new Tag("#BrewBoss", wolfsRidgeBrewing, northHighBrewing));
 		tagRepo.save(new Tag("#DistillingDreams", middleWestSpirits, fourFiftyOneSpirits));
-		
+		tagRepo.save(new Tag("#MORETAGBELL", powellVillageWinery));
 
 
-
+		commentRepo.save(new Comment("This place is awesome!!", powellVillageWinery));
 	}
 }

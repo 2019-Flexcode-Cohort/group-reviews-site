@@ -40,6 +40,9 @@ a {
   color: var(--wht);
 }
 
+.tag-div{
+	background-color: green;
+}
 /* #categories{
     .row {
         display: -webkit-flex;

@@ -14,18 +14,36 @@
 <body>
     <h1 th:text="${review.name}"></h1>
     <img th:src="${review.ImageUrl}">
-    //picture
+    <!-- //picture -->
     <h2>One sentence that states their type ex: "A beautiful winery in the heart of Columbus"</h2>
     <h2 th:text="${review.description}"></h2>
-    //What they're known for (any special drinks ect)
+    <!-- //What they're known for (any special drinks ect)
     //Menu Sample
-    //testimonials (2 or 3)
+    //testimonials (2 or 3) -->
     <h2 th:text="${review.contactInfo}"></h2>
-    //link to business' website
+    <!-- //link to business' website -->
+    <div class="tag-anchor">
+        <input type="hidden" th:value="${review.id}" class="tag-anchor__review-id">
+    </div>
+    <form class="tag-adder">
+        <input type="text" class="tag-adder__name" name="name">
+        <button class="tag-adder__submit"></button>
+    </form>
+    <div class="comments">
+        <div th:each="comment :${review.comments}">
+            <p th:text="${comment.description}"></p>
+            <form class="comment-adder">
+                <input type="text" class="comment-adder__name" name="name">
+                <button class="comment-adder__submit"></button>
+            </form>
+        </div>
+    </div>
     <footer>
         <p><a href="/categories">Back to Main Menu</a></p>
         <small>&copy FlexCode Drinks 2019</small>
     </footer>
+
+    <script src="/single-review.js"></script>
 </body>
 
 </html>
